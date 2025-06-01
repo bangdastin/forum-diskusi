@@ -1,0 +1,54 @@
+.not-found-container {
+  max-width: 480px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: var(--color-card-background);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.not-found-container:hover {
+  transform: translateY(-5px);
+}
+
+.not-found-container h2 {
+  font-size: 3rem;
+  color: var(--color-error);
+  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.not-found-container p {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  margin-bottom: 36px;
+  line-height: 1.5;
+  user-select: none;
+}
+
+.not-found-container .button {
+  display: inline-block;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.not-found-container .button:hover,
+.not-found-container .button:focus {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  box-shadow: 0 6px 20px rgba(198, 40, 40, 0.5);
+  outline: none;
+}

@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb; /* background cerah dan soft */
+  color: #1f2937; /* warna teks gelap tapi gak terlalu hitam */
+  line-height: 1.6; /* jarak baris nyaman dibaca */
+  font-size: 16px; /* ukuran font dasar */
+  -webkit-text-size-adjust: 100%; /* menjaga ukuran teks pada mobile */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  background-color: #f3f4f6; /* warna latar belakang kode */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.95em;
+  color: #d6336c; /* warna merah muda agak gelap untuk highlight */
+}

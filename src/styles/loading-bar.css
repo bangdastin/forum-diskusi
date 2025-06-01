@@ -1,0 +1,34 @@
+.loading-bar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-bar {
+  height: 100%;
+  background-color: var(--color-accent);
+  width: 30%; /* sedikit lebih lebar agar animasi terasa lebih smooth */
+  position: absolute;
+  left: -30%;
+  animation: loading-animation 1.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes loading-animation {
+  0% {
+    left: -30%;
+    width: 30%;
+  }
+  50% {
+    left: 100%;
+    width: 30%;
+  }
+  100% {
+    left: -30%;
+    width: 30%;
+  }
+}

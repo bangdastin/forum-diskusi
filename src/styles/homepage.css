@@ -1,0 +1,88 @@
+/* src/styles/homepage.css */
+
+.homepage {
+  padding: 24px 0;
+}
+
+.category-filter {
+  background-color: var(--color-card-background);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.category-filter h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.category-filter button {
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.category-filter button:hover {
+  background-color: #dedede;
+  transform: scale(1.03);
+}
+
+.category-filter button.active-category {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.category-filter button.active-category:hover {
+  background-color: var(--color-primary-dark);
+  transform: scale(1.03);
+}
+
+.threads-list {
+  display: grid;
+  gap: 24px;
+}
+
+.add-thread-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--color-accent);
+  color: white;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+  z-index: 100;
+}
+
+.add-thread-button:hover {
+  background-color: #b0004d;
+  transform: translateY(-2px);
+}

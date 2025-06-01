@@ -1,0 +1,16 @@
+:root {
+  --color-primary: #5c6bc0; /* Soft Indigo */
+  --color-primary-dark: #3949ab;
+  --color-accent: #ec407a; /* Soft Pink */
+  --color-text: #212121; /* Lebih gelap untuk readability */
+  --color-text-light: #757575; /* Medium gray */
+  --color-background: #f9fafb; /* Lebih terang dan bersih */
+  --color-border: #e0e0e0; /* Soft border */
+  --color-card-background: #ffffff;
+  --color-success: #43a047; /* Hijau lebih segar */
+  --color-error: #e53935; /* Merah lebih dalam */
+
+  --color-vote-up: #43a047;
+  --color-vote-down: #e53935;
+  --color-vote-neutral: #bdbdbd; /* Soft grey */
+}

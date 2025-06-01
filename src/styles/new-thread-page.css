@@ -1,0 +1,14 @@
+/* src/styles/new-thread-page.css */
+.new-thread-page {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 120px); /* Adjust based on header/footer */
+}
+
+.new-thread-page .form-card {
+  width: 100%;
+  max-width: 600px; /* Lebar yang lebih besar untuk form thread */
+  margin: 0; /* Override default margin */
+}

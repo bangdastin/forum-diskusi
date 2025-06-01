@@ -1,0 +1,91 @@
+/* src/styles/Header.css */
+
+.app-header {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 16px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.app-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.9rem;
+  letter-spacing: -0.5px;
+}
+
+.app-header h1 a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.app-header h1 a:hover {
+  opacity: 0.85;
+}
+
+.app-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.app-header nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+.app-header nav ul li a {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.app-header nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.app-header nav ul li button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.app-header nav ul li button:hover {
+  background-color: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+.app-header .avatar-small {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+}

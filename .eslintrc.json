@@ -1,0 +1,49 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["airbnb", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks"],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "react/prop-types": "off",
+    "func-names": "off",
+    "no-console": "off",
+    "camelcase": "off",
+    "no-shadow": "off",
+    "react/no-danger": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-alert": "off",
+    "react/self-closing-comp": "warn",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "react/jsx-one-expression-per-line": ["error", { "allow": "literal" }],
+    "react/jsx-props-no-spreading": "off",
+    "object-curly-newline": ["error", { "multiline": true, "consistent": true }],
+    "operator-linebreak": ["error", "after", { "overrides": { "=": "none" } }],
+    "no-unused-vars": "warn",
+    "import/order": "off"
+  }
+}

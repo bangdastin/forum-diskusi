@@ -1,0 +1,90 @@
+/* src/styles/cards.css */
+.thread-card {
+  background-color: var(--color-card-background);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+  margin-bottom: 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.thread-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.thread-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.thread-card-title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.thread-card-title a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.thread-card-title a:hover {
+  color: var(--color-primary-dark);
+  text-decoration: underline;
+}
+
+.thread-card-category {
+  background-color: #8791d6;
+  color: #444;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.thread-card-body {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin-bottom: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.thread-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  color: var(--color-text-light);
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.thread-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #777;
+}
+
+.thread-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.comments-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #555;
+}
