@@ -4,8 +4,14 @@
     "es2021": true,
     "node": true,
     "jest": true
+
   },
-  "extends": ["airbnb", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:cypress/recommended"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -13,7 +19,11 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks"],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "cypress"
+  ],
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/react-in-jsx-scope": "off",
@@ -30,7 +40,7 @@
     "no-alert": "off",
     "react/self-closing-comp": "warn",
     "max-len": [
-      "error",
+      "warn",
       {
         "code": 120,
         "ignoreComments": true,
@@ -39,11 +49,30 @@
         "ignoreTemplateLiterals": true
       }
     ],
-    "react/jsx-one-expression-per-line": ["error", { "allow": "literal" }],
+    "react/jsx-one-expression-per-line": ["warn", { "allow": "literal" }],
     "react/jsx-props-no-spreading": "off",
-    "object-curly-newline": ["error", { "multiline": true, "consistent": true }],
-    "operator-linebreak": ["error", "after", { "overrides": { "=": "none" } }],
-    "no-unused-vars": "warn",
-    "import/order": "off"
+    "object-curly-newline": ["warn", { "multiline": true, "consistent": true }],
+    "operator-linebreak": ["warn", "after", { "overrides": { "=": "none" } }],
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "import/order": "off",
+    "eol-last": ["warn", "always"],
+    "no-multiple-empty-lines": ["warn", { "max": 1, "maxEOF": 0 }],
+    "comma-dangle": ["warn", "always-multiline"],
+
+    "import/no-extraneous-dependencies": ["error", {
+      "devDependencies": [
+        "**/*.test.js",
+        "**/*.test.jsx",
+        "cypress.config.js",
+        "cypress/**"
+      ]
+    }]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 }
