@@ -1,0 +1,43 @@
+# File: .github/workflows/ci.yml
+
+name: Node.js CI
+
+# Pemicu workflow
+on:
+  push:
+    branches: [ master, main ] # Sesuaikan dengan nama branch utama Anda
+  pull_request:
+    branches: [ master, main ] # Sesuaikan dengan nama branch utama Anda
+
+jobs:
+  build_and_test:
+    name: Build and Test
+    runs-on: ubuntu-latest # Menggunakan image Ubuntu terbaru
+
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x] # Anda bisa menentukan beberapa versi Node.js untuk diuji
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Action untuk checkout kode
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm' # Mengaktifkan caching untuk dependensi npm
+
+      - name: Install dependencies
+        run: npm ci # 'npm ci' lebih cepat dan lebih andal untuk CI daripada 'npm install'
+
+      - name: Run linter
+        run: npm run lint # Berdasarkan skrip di package.json Anda
+
+      - name: Run tests
+        run: npm test -- --watchAll=false # Menjalankan tes Jest
+        # '--watchAll=false' memastikan tes berjalan sekali dan keluar
+
+      - name: Build application
+        run: npm run build # Mem-build aplikasi untuk produksi
+        # Ini juga membantu menangkap error saat proses build
