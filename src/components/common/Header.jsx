@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // 1. Import PropTypes
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { asyncLogoutUser } from '../../redux/actions/authActions';
-import '../../styles/Header.css'; // Buat file styling ini
+import '../../styles/Header.css';
 
 function Header({ authUser }) {
   const dispatch = useDispatch();
@@ -35,9 +36,7 @@ function Header({ authUser }) {
                     alt={authUser.name}
                     className="avatar-small"
                   />
-                  <span>
-                    {authUser.name}
-                  </span>
+                  <span>{authUser.name}</span>
                 </li>
                 <li>
                   <button type="button" onClick={onLogout}>
@@ -61,5 +60,20 @@ function Header({ authUser }) {
     </header>
   );
 }
+
+// 2. Add propTypes definition
+Header.propTypes = {
+  authUser: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    avatar: PropTypes.string, // avatar can be optional as there's a fallback
+    // id: PropTypes.string.isRequired, // Consider adding id if it's part of authUser structure
+    // and typically used, though not directly by this component's rendering.
+  }),
+};
+
+// 3. Add defaultProps if authUser can be null or undefined
+Header.defaultProps = {
+  authUser: null,
+};
 
 export default Header;
