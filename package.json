@@ -5,30 +5,47 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.9.0",
     "dotenv": "^16.5.0",
     "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-redux": "^9.2.0",
-    "react-router": "^6.30.1",
     "react-router-dom": "^6.30.1",
     "react-scripts": "5.0.1",
-    "redux": "^5.0.1",
+    "styled-components": "^6.1.11",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.5.2",
+    "cypress": "^14.4.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-dicodingacademy": "^0.9.4",
+    "eslint-plugin-cypress": "^3.4.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest-dom": "^5.4.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-testing-library": "^6.2.2",
+    "prettier": "^3.5.3",
+    "redux-mock-store": "^1.5.5",
+    "start-server-and-test": "^2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:ci-e2e": "BROWSER=none CI=false HOST=127.0.0.1 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "lint": "eslint . --ext js,jsx,ts,tsx",
-    "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "e2e": "start-server-and-test start:ci-e2e http://127.0.0.1:3000 cypress:run",
+    "e2e": "start-server-and-test start:ci-e2e http
     "ci:test": "npm test && npm run e2e"
   },
   "eslintConfig": {
@@ -56,26 +73,19 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "cypress": "^14.4.0",
-    "eslint": "^8.57.1",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "prettier": "^3.5.3",
-    "redux-mock-store": "^1.5.5",
-    "redux-thunk": "^3.1.0",
-    "eslint-config-dicodingacademy": "^0.9.4",
-    "eslint-plugin-cypress": "^3.4.0",
-    "eslint-plugin-jest-dom": "^5.4.0",
-    "eslint-plugin-testing-library": "^6.2.2"
-  },
   "jest": {
     "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\](?!react-router-dom|react-router).+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+      "[/\\\\]node_modules[/\\\\](?!axios|react-router-dom|react-router).+\\.(js|jsx|mjs|cjs|ts|tsx)$",
       "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/index.{js,jsx,ts,tsx}",
+      "!src/reportWebVitals.{js,jsx,ts,tsx}",
+      "!src/setupTests.{js,jsx,ts,tsx}",
+      "!src/redux/store.{js,jsx,ts,tsx}",
+      "!src/services/api.{js,jsx,ts,tsx}",
+      "!src/utils/api.{js,jsx,ts,tsx}"
     ]
   }
 }
