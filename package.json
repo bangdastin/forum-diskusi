@@ -45,7 +45,7 @@
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "e2e": "start-server-and-test start:ci-e2e http
+    "e2e": "start-server-and-test start:ci-e2e http",
     "ci:test": "npm test && npm run e2e"
   },
   "eslintConfig": {
